@@ -1,9 +1,9 @@
-certifi==2018.1.18
+certifi==2018.11.29
 chardet==3.0.4
 decorator==4.2.1
 emoji==0.5.0
 httplib2==0.10.3
-idna==2.6
+idna==2.8
 Mastodon.py==1.2.2
 numpy==1.14.2
 oauth2==1.9.0.post1
@@ -11,10 +11,10 @@ oauthlib==2.0.6
 opencv-python==3.4.0.12
 python-dateutil==2.6.1
 pytz==2017.3
-requests==2.18.4
+requests==2.21.0
 requests-oauthlib==0.8.0
 six==1.11.0
 slackclient==1.1.2
 toml==0.9.4
-urllib3==1.22
+urllib3==1.24.1
 websocket-client==0.46.0
