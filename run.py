@@ -158,7 +158,7 @@ class Twitoot(object):
         # public urlのtextからfileのurlを抽出する
         url_pub = resp_pub['file']['permalink_public']
         res_pub = requests.get(url_pub, stream=True)
-        url_file = re.compile(r'<img src="https://.*').findall(res_pub.text)[0][10:-2]
+        url_file = re.compile(r'<img src="https://.*"></a></div>').findall(res_pub.text)[0][10:-12]
 
         # 抽出したfileのurlからファイルをダウンロードする
         res_file = requests.get(url_file, stream=True)
@@ -168,7 +168,7 @@ class Twitoot(object):
         logging.info('File saved: ' + str(img_info) + ' -> ' + save_path)
 
         # public urlをrevokeする
-        resp_depub = self.sc.api_call('files.revokePublicURL', token=self.SECRET['slack']['oauth_token'], file=img_id)
+        # resp_depub = self.sc.api_call('files.revokePublicURL', token=self.SECRET['slack']['oauth_token'], file=img_id)
         logging.info('revokePublicURL for ' + str(img_id))
 
         return save_path
