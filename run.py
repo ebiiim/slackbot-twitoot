@@ -168,7 +168,7 @@ class Twitoot(object):
         logging.info('File saved: ' + str(img_info) + ' -> ' + save_path)
 
         # public urlをrevokeする
-        # resp_depub = self.sc.api_call('files.revokePublicURL', token=self.SECRET['slack']['oauth_token'], file=img_id)
+        resp_depub = self.sc.api_call('files.revokePublicURL', token=self.SECRET['slack']['oauth_token'], file=img_id)
         logging.info('revokePublicURL for ' + str(img_id))
 
         return save_path
